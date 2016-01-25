@@ -10,12 +10,9 @@
         )
     
     $twitterResults = (Get-TwitterTimeline -Tweeter $Tweeter -tweetCount 100)
-
+    $twitterResults | Where-Object {$_.entities.hashtags.text -contains $hashtag}
     
 
     
     }
 
-    Filter-TwitterResults -tweeter "lucydanon_"
-     $twitterResults | Where-Object {$twitterResults.entities.hashtags.text -like "xero"} | ft text,entities.hashtags
-    

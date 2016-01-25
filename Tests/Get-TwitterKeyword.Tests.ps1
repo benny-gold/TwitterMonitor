@@ -1,9 +1,10 @@
 ﻿$here = Split-Path -Parent $MyInvocation.MyCommand.Path
 $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path).Replace(".Tests.", ".")
-. "$here\$sut"
+. "$here\..\$sut"
 
 Describe "Get-TwitterKeyword" {
-    It "does something useful" {
-        $true | Should Be $false
+    It "returns a boolean value" {
+       (Get-TwitterKeyword).gettype().Name | Should Be Boolean
     }
 }
+

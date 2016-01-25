@@ -7,6 +7,10 @@ Describe "Get-TwitterTimeline" {
         (Get-TwitterTimeline -Tweeter kzdrfa).statuscode | Should not Be "BadRequest"
     }
     It "should be authenticated" {
-        (Get-TwitterTimeline -Tweeter kzdrfa).IsMutuallyAuthenticated | Should Be $true
+        (Get-TwitterTimeline -Tweeter kzdrfa).IsMutuallyAuthenticated | Should not Be $false
     }
+    It "should return the correct number of results" {
+        (Get-TwitterTimeline -Tweeter kzdrfa -tweetCount 7).count | Should Be 7
+    }
+
 }

@@ -4,12 +4,15 @@ $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path).Replace(".Tests.", ".")
 
 Describe "New-TwitterAuthorisation" {
     It "Doesn't return an error" {
-        (New-TwitterAuthorisation).error | Should Be $null
+        (New-TwitterAuthorisation).exception | Should Be $null
     }
-    It "Shouldn't get a 400 back from the server" {
-        (New-TwitterAuthorisation ).status | Should not Be "400"
+    It "Should send a good request" {
+        (New-TwitterAuthorisation).statusCode | Should not Be BadRequest
     }
-    It "Returns a successful Message" {
-        New-TwitterAuthorisation | Should Be "Ok"
+    It "Returns an access token" {
+        (New-TwitterAuthorisation).token_type | Should Be Bearer
+    }
+    It "access token is not blank" {
+        (New-TwitterAuthorisation).access_token | Should not Be $null
     }
 }

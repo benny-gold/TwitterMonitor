@@ -15,7 +15,7 @@
         [int]$tweetCount=50
         )
 
-    $token = New-TwitterAuthorisation
+    $token = New-TwitterAuthorisation -consumerKey $consumerKey -consumerSecret $consumerSecret -accessToken $accessToken -accessTokenSecret $accessTokenSecret
     $APICall = $APIURL+"?screen_name=$($Tweeter)&count=$($tweetCount)"
     $Headers = @{Authorization="Bearer $($token.access_token)"}
 

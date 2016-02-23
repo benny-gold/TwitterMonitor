@@ -12,19 +12,19 @@
 
         # Consumer key
         [Parameter(Position=2)]
-        [string]$consumerKey="NKZcldmAqt3l6TTE3dYdDg", 
+        [string]$consumerKey, 
 
         # Consumer secret
         [Parameter(Position=3)]
-        [string]$consumerSecret="lsm8n34b86GWROTlYcBddzEsaLDGep8AxYqcMwac92I", 
+        [string]$consumerSecret, 
         
         # Access token
         [Parameter(Position=4)]
-        [string]$accessToken="7126682-I6Gev2crWHn0txCxZ4FTn0KtFS1FpRhsZLuYAwOOu0", 
+        [string]$accessToken, 
         
         # Access token Secret
         [Parameter(Position=5)]
-        [string]$accessTokenSecret="FuG6blhpGVCOrm3VrcCH8jByZgjIUepdGuHWzM6g8mM"
+        [string]$accessTokenSecret
         )
 
     $APICall = $APIURL

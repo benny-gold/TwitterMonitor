@@ -1,7 +1,7 @@
 ﻿$here = Split-Path -Parent $MyInvocation.MyCommand.Path
 $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path).Replace(".Tests.", ".")
 . "$here\..\$sut"
-
+. "$here\keys.ps1"
 . "$here\..\New-TwitterAuthorisation.ps1"
 . "$here\..\Get-TwitterTimeline.ps1"
 

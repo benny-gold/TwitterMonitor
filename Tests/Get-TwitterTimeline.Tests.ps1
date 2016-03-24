@@ -1,8 +1,6 @@
 ﻿$here = Split-Path -Parent $MyInvocation.MyCommand.Path
 $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path).Replace(".Tests.", ".")
-. "$here\..\$sut"
-. "$here\keys.ps1"
-. "$here\..\New-TwitterAuthorisation.ps1"
+Import-Module "$here\..\TwitterMonitor.psm1"
 
 Describe "Get-TwitterTimeline" {
     It "should send a good request" {

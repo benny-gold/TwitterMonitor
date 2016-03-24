@@ -1,7 +1,7 @@
 ﻿$here = Split-Path -Parent $MyInvocation.MyCommand.Path
 $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path).Replace(".Tests.", ".")
-. "$here\..\$sut"
-. "$here\keys.ps1"
+Import-Module "$here\..\TwitterMonitor.psm1"
+
 
 Describe "New-TwitterAuthorisation" {
     It "Doesn't return an error" {

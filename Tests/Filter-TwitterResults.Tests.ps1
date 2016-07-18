@@ -5,7 +5,7 @@ Import-Module "$here\..\TwitterMonitor" -Force
 
 Describe "Filter-TwitterResults" {
     It "returns a match" {
-       Filter-TwitterResults -Tweeter kzdrfa -Hashtag "chif" | Should not be $null
+       Filter-TwitterResults -Tweeter camelcasehyphen -Hashtag "scrumdaylondon" | Should not be $null
     }
 }
 
